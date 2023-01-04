@@ -15,35 +15,29 @@
 
 body {
     margin: 0;
-    height: 100vh;
-    font-family: 'Roboto' sans-serif;
-    background-color: var(--shark);
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
     color: var(--shark);
-    overflow: hidden;
+    overflow:visible;
 }
 .wrapper {
     height: 100%;
     display: flex;
-    background-color: var(--dark-blue);
+    background-color: whitesmoke;
+    flex-direction: column;
 }
 .headers {
     margin: 0px 16px;
 }
-.headers > h2 {
-    font-family: 'Playfair Display', serif;
-        /* font-family: 'Passions Conflict', cursive; */
-}
 section {
-    width: 95%;
-    display: none;
+    width: 100%;
+    display: block;
     background-image: url('images/city.jpg');
     background-position: center;
     background-size: cover;
 }
 .floating {
     width: 100%;
-    position: relative;
-    top: 300px;
     background-color: black;
     opacity: 0.7;
     font-family: 'NorseBold';
@@ -58,15 +52,27 @@ section {
     width: 100%;
     font-size: 4rem;
     position: relative;
+    padding-top: 15px;
 }
 .floating > h1::before {
     display: block;
     content: url('images/logo.png');    
     display: inline-block;
 }
+.floating > h4 {
+    position: absolute;
+    top: 2px;
+    color: white;
+    margin-top: 0px;
+}
 fieldset {
     display: flex;
     flex-wrap: wrap;
+    border: 1px solid var(--shark);
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 9px 24px -15px rgba(66, 68, 90, 1);
+-moz-box-shadow: 3px 9px 24px -15px rgba(66, 68, 90, 1);
+box-shadow: 3px 9px 24px -15px rgba(66, 68, 90, 1);
 }
 
 fieldset > div {
@@ -79,12 +85,15 @@ fieldset > div:nth-child(2) {
     margin-top: 0px;
 }
 label {
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 5px;
 }
 input {
     border-radius: 3px;
     border: 1px solid gray;
     height: 18px;
+    
 }
 input:focus {
     border: 1px solid var(--light-blue);
@@ -96,17 +105,49 @@ input:focus {
 }
 
 button {
-    height: 35px;
+    height: 45px;
+    width: 150px;
     font-size: 1rem;
     background-color: #48929B;
     border: 1px solid var(--shark);
     border-radius: 5px;
-    color: var(--shark);
+    color: white;
+}
+.logIn {
+    font-size: 1.2rem;
+}
+main {
+    max-width: 700px;
+    margin: 0 auto;
+}
+a:link {
+    color:  var(--light-blue);
+}
+a:visited {
+    color: var(--dark-blue);
 }
 
 @media only screen and (min-width: 1240px) {
+    body {
+        height: 100vh;
+    }
     .wrapper {
         margin: 0 auto;
+        flex-direction: row;
+
+    }
+    .floating {
+        position: relative;
+        top: 300px;
+    }
+    .floating > h4 {
+        position: fixed;
+        top: auto;
+        bottom: 20px;
+        color: white;
+    }
+    .floating > h1 {
+        padding-top: 0px;
     }
     section {
         display: block;
@@ -114,13 +155,26 @@ button {
     }
     main {
         width: 60vw;
+        margin: 0;
+        padding-left: 40px;
+        padding-top: 60px;
     }
     fieldset {
-        gap: 10px;
+        gap: 10%;
         max-width: 700px;
     }
     fieldset > div {
-        width: 49%;
+        width: 45%;
         margin-top: 5px !important;
+        margin-bottom: 10px;
+    }
+    input {
+        max-width: 250px;
+    }
+    .headers {
+        margin-left: 0px;
+    }
+    .lowerSite {
+        margin-left: 0px;
     }
 }
