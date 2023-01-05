@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+    --sky-50: #f0f9ff;
+    --sky-100: #e0f2fe;
+    --sky-200: #bae6fd;
+    --sky-300: #7dd3fc;
+    --sky-400: #38bdf8;
+    --sky-500: #0ea5e9;
+    --sky-600: #0284c7;
+    --sky-700: #0369a1;
+    --sky-800: #075985;
+    --sky-900: #0c4a6e;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+.content {
+    display: grid;
+    grid-template-columns: minmax(min-content, 270px) 1fr;
+    grid-template-rows: minmax(1fr, 400px) 1fr;
+}
+.sidebar  {
+    grid-row: span 2;
+    grid-column: span 1;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    background-color: var(--sky-600);
+    padding: 25px;
+}
+.sidebar > h1 {
+    color: var(--sky-50);
+    display: flex;
+    align-items: center;
+}
+.sidebar > div {
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+}
+.sidebar > div > a {
+    color: var(--sky-50);
+    display: flex;
+    gap: 15px;
+    font-size: 18px;
+    text-decoration: none;
+    align-items: center;
+}
+
+header {
+    grid-row: span 1;
+    grid-column: 2 / 3;
+    background-color: brown;
+}
+main {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: 2fr minmax(1fr, 300px);
+    grid-template-rows: 1fr 1fr;
+}
+.articles {
+    grid-column: span 1;
+    grid-row: span 1;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    
+}
+article {
+    background-color: chartreuse;
+}
+.announcements {
+    grid-column: 2/3;
+    grid-row: span 1;
+}
+.trending {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
